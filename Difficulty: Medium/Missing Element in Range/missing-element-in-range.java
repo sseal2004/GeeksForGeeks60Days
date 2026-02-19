@@ -4,6 +4,7 @@ class Solution {
         Arrays.sort(arr);
         int idx=0;
         for (int i = low; i <= high; i++) {
+         // skip elements smaller than current i
         while (idx < arr.length && arr[idx] < i) {
                 idx++;
             }
