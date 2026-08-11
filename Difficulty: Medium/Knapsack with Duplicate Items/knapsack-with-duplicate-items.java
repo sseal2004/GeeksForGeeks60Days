@@ -12,13 +12,13 @@ class Solution {
          
      //remaining
      for(int i=1;i<n;i++){
-         for(int j=0;j<=capacity;j++){
+         for(int cap=0;cap<=capacity;j++){
              int take=0;
              int nottake = dp[i-1][j];
-             if(wt[i]<=j){
-                 take = val[i]+dp[i][j-wt[i]];
+             if(wt[i]<=cap){
+                 take = val[i]+dp[i][cap-wt[i]];
              }
-             dp[i][j] = Math.max(take,nottake);
+             dp[i][cap] = Math.max(take,nottake);
          }
      }
      return dp[n-1][capacity];
